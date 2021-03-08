@@ -3,7 +3,7 @@
 
 <ul><!-- Unordered list -->
   <ng-container *ngFor="let event of events">
-    <li  *ngIf="event.priority === 3">
+    <li *ngIf="event.priority === 3">
        {{ event.title }} {{ event.priority }}
     </li>
   </ng-container>
