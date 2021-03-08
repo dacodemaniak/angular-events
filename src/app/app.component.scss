@@ -1,0 +1,16 @@
+$border-color: #5f5e5e;
+$base-unit: 1em;
+
+/**
+* Pure CSS : ul li
+**/
+ul {
+  list-style-type: none;
+
+  li {
+    border-color: $border-color;
+    border-style: solid;
+    border-width: 1px;
+    height: $base-unit * 2;
+  }
+}
