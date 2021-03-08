@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { EventInterface } from 'src/app/shared/models/interfaces/event-interface';
 
 @Component({
@@ -6,7 +6,7 @@ import { EventInterface } from 'src/app/shared/models/interfaces/event-interface
   templateUrl: './event-list.component.html',
   styleUrls: ['./event-list.component.scss']
 })
-export class EventListComponent implements OnInit {
+export class EventListComponent implements OnInit, OnDestroy {
   public events: EventInterface[] = [];
 
   public filterActive: number = 0;
@@ -31,6 +31,10 @@ export class EventListComponent implements OnInit {
         priority: 1
       },
     );
+  }
+
+  ngOnDestroy(): void {
+
   }
 
   public filter(priority: number): void {
