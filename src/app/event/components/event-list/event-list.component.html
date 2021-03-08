@@ -1,13 +1,30 @@
 <app-filter-bar (filterActive)="filter($event)" [events]="events"></app-filter-bar>
 
 <ng-container *ngIf="countFiltered() > 0 else noEvent">
-  <ul><!-- Unordered list -->
+  <table><!-- Tableau HTML -->
+    <thead>
+      <tr>
+        <th>
+          Titre
+        </th>
+        <th>
+          Date
+        </th>
+        <th>
+          Priorité
+        </th>
+        <th>Action</th>
+      </tr>
+    </thead>
     <ng-container *ngFor="let event of events">
-      <li *ngIf="filterActive === 0 || event.priority === filterActive">
-        {{ event.title }} {{ event.priority }}
-      </li>
+      <tr *ngIf="filterActive === 0 || event.priority === filterActive">
+        <td>{{ event.title | uppercase }}</td>
+        <td>{{ event.beginAt | date: 'dd-MM-YYYY' }}</td>
+        <td>{{ event.priority }}</td>
+        <td>&nbsp;</td>
+      </tr>
     </ng-container>
-  </ul>
+  </table>
 </ng-container>
 
 <ng-template #noEvent>
