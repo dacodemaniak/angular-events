@@ -1,16 +1,24 @@
 
 <div>Hello {{ title }} !</div>
 
-<ul><!-- Unordered list -->
-  <ng-container *ngFor="let event of events">
-    <li *ngIf="event.priority === 3">
-       {{ event.title }} {{ event.priority }}
-    </li>
-  </ng-container>
-</ul>
+<div class="filterBar">
+  <button [ngClass]="{'active': filterActive === 0}" type="button" (click)="filter(0)">Tous</button>
+  <button [ngClass]="{'active': filterActive === 1}"type="button" (click)="filter(1)">Priorité 1</button>
+  <button [ngClass]="{'active': filterActive === 2}" type="button" (click)="filter(2)">Priorité 2</button>
+  <button [ngClass]="{'active': filterActive === 3}" type="button" (click)="filter(3)">Priorité 3</button>
+</div>
 
+<ng-container *ngIf="countFiltered() > 0 else noEvent">
+  <ul><!-- Unordered list -->
+    <ng-container *ngFor="let event of events">
+      <li *ngIf="filterActive === 0 || event.priority === filterActive">
+        {{ event.title }} {{ event.priority }}
+      </li>
+    </ng-container>
+  </ul>
+</ng-container>
 
+<ng-template #noEvent>
+  Désolé, aucun événement de ce type
+</ng-template>
 
-<button type="button" (click)="addEvent()">
-  Ajouter un nom
-</button>

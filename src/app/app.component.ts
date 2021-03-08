@@ -11,6 +11,8 @@ export class AppComponent {
   public title: String = new String('events');
   public events: EventInterface[] = [];
 
+  public filterActive: number = 0;
+
   public constructor(
     private titleService: Title
   ) {
@@ -32,6 +34,14 @@ export class AppComponent {
       },
     );
     this.titleService.setTitle('Liste des événements');
+  }
+
+  public filter(priority: number): void {
+    this.filterActive = priority;
+  }
+
+  public countFiltered(): number {
+    return this.events.filter((event: EventInterface) => event.priority === this.filterActive || this.filterActive === 0).length;
   }
 
   public addEvent(): void {
