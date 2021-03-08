@@ -1,0 +1,15 @@
+<app-filter-bar (filterActive)="filter($event)" [events]="events"></app-filter-bar>
+
+<ng-container *ngIf="countFiltered() > 0 else noEvent">
+  <ul><!-- Unordered list -->
+    <ng-container *ngFor="let event of events">
+      <li *ngIf="filterActive === 0 || event.priority === filterActive">
+        {{ event.title }} {{ event.priority }}
+      </li>
+    </ng-container>
+  </ul>
+</ng-container>
+
+<ng-template #noEvent>
+  Désolé, aucun événement de ce type
+</ng-template>
