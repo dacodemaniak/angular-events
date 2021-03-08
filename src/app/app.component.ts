@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { EventInterface } from './shared/models/interfaces/event-interface';
 
 @Component({
   selector: 'app-root',
@@ -9,49 +8,12 @@ import { EventInterface } from './shared/models/interfaces/event-interface';
 })
 export class AppComponent {
   public title: String = new String('events');
-  public events: EventInterface[] = [];
 
-  public filterActive: number = 0;
 
   public constructor(
     private titleService: Title
   ) {
-    this.events.push(
-      {
-        title: 'Découvrir le framework Angular',
-        beginAt: new Date(),
-        priority: 3
-      },
-      {
-        title: 'Directive de structure ngFor',
-        beginAt: new Date(),
-        priority: 3
-      },
-      {
-        title: 'Directive de structure ngIf',
-        beginAt: new Date(),
-        priority: 1
-      },
-    );
     this.titleService.setTitle('Liste des événements');
-  }
-
-  public filter(priority: number): void {
-    this.filterActive = priority;
-  }
-
-  public countFiltered(): number {
-    return this.events.filter((event: EventInterface) => event.priority === this.filterActive || this.filterActive === 0).length;
-  }
-
-  public addEvent(): void {
-    this.events.push({
-      title: 'Schematics',
-      detail: 'Use ng g to generate Angular schematic',
-      beginAt: new Date(),
-      priority: 3
-    });
-    this.titleService.setTitle(`Liste des événements - ${this.events.length}`)
   }
 
 }

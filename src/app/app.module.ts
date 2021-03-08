@@ -3,16 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FilterBarComponent } from './components/filter-bar/filter-bar.component';
+import { EventModule } from './event/event.module';
+
+import { UserInterfaceModule } from './shared/user-interface/user-interface.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FilterBarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    UserInterfaceModule,
+    EventModule
   ],
   providers: [],
   bootstrap: [AppComponent]
