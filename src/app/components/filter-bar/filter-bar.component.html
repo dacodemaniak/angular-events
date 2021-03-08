@@ -1,0 +1,9 @@
+<div class="header">
+  Affiche : {{ countFiltered() }} / {{ events.length }} événements
+</div>
+<div class="filterBar">
+  <button [ngClass]="{'active': activeFilter === 0}" type="button" (click)="filter(0)">Tous</button>
+  <button [ngClass]="{'active': activeFilter === 1}"type="button" (click)="filter(1)">Priorité 1</button>
+  <button [ngClass]="{'active': activeFilter === 2}" type="button" (click)="filter(2)">Priorité 2</button>
+  <button [ngClass]="{'active': activeFilter === 3}" type="button" (click)="filter(3)">Priorité 3</button>
+</div>

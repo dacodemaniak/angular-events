@@ -1,12 +1,7 @@
 
 <div>Hello {{ title }} !</div>
 
-<div class="filterBar">
-  <button [ngClass]="{'active': filterActive === 0}" type="button" (click)="filter(0)">Tous</button>
-  <button [ngClass]="{'active': filterActive === 1}"type="button" (click)="filter(1)">Priorité 1</button>
-  <button [ngClass]="{'active': filterActive === 2}" type="button" (click)="filter(2)">Priorité 2</button>
-  <button [ngClass]="{'active': filterActive === 3}" type="button" (click)="filter(3)">Priorité 3</button>
-</div>
+<app-filter-bar (filterActive)="filter($event)" [events]="events"></app-filter-bar>
 
 <ng-container *ngIf="countFiltered() > 0 else noEvent">
   <ul><!-- Unordered list -->

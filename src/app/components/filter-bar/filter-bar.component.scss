@@ -1,0 +1,14 @@
+$border-color: #5f5e5e;
+
+button {
+  background-color: lighten($border-color, 45%);
+  border-radius: .5em;
+  padding: .5em;
+  margin-right: .5em;
+
+  &.active { // Pure CSS : button.active
+    background-color: $border-color;
+    color: #fff;
+    font-weight: bold;
+  }
+}
