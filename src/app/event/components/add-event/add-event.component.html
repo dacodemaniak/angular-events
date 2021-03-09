@@ -1,0 +1,26 @@
+<form [formGroup]="eventForm">
+  <div class="form-group">
+    <label for="title">Titre</label>
+    <input type="text" formControlName="title" id="title">
+  </div>
+  <div class="form-group">
+    <label for="detail">Description</label>
+    <textarea formControlName="detail" id="detail"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="priority">Priorité</label>
+    <select formControlName="priority" id="priority" size="0">
+      <option value="">Sélectionnez...</option>
+      <option value="1">Faible</option>
+      <option value="2">Moyenne</option>
+      <option value="3">Haute</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <button type="submit" [disabled]="eventForm.invalid">
+      Ajouter
+    </button>
+  </div>
+</form>
+
+{{ eventForm.value | json }}
