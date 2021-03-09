@@ -1,36 +1,52 @@
-<app-filter-bar (filterActive)="filter($event)" [events]="events"></app-filter-bar>
+<ng-container *ngIf="!loading else loader">
+  <app-filter-bar (filterActive)="filter($event)" [events]="events"></app-filter-bar>
 
-<ng-container *ngIf="countFiltered() > 0 else noEvent">
-  <table><!-- Tableau HTML -->
-    <thead>
-      <tr>
-        <th>
-          Titre
-        </th>
-        <th>
-          Date
-        </th>
-        <th>
-          Echéance
-        </th>
-        <th>
-          Priorité
-        </th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <ng-container *ngFor="let event of events">
-      <tr evRow="#f8f8f8" *ngIf="filterActive === 0 || event.priority === filterActive">
-        <td>{{ event.title | uppercase }}</td>
-        <td>{{ event.beginAt | date: 'dd-MM-YYYY' }}</td>
-        <td>{{ event.beginAt | evDueDate: {diffAs: 'day'} }}</td>
-        <td>{{ event.priority }}</td>
-        <td>&nbsp;</td>
-      </tr>
-    </ng-container>
-  </table>
+  <ng-container *ngIf="countFiltered() > 0 else noEvent">
+    <table><!-- Tableau HTML -->
+      <thead>
+        <tr>
+          <th>
+            Titre
+          </th>
+          <th>
+            Date
+          </th>
+          <th>
+            Echéance
+          </th>
+          <th>
+            Priorité
+          </th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <ng-container *ngFor="let event of events">
+        <tr evRow="#f8f8f8" *ngIf="filterActive === 0 || event.priority === filterActive">
+          <td><a [routerLink]="['/', 'event-upd', event.id]"> {{ event.title | uppercase }}</a></td>
+          <td>{{ event.beginAt | date: 'dd-MM-YYYY' }}</td>
+          <td>{{ event.beginAt | evDueDate: {diffAs: 'day'} }}</td>
+          <td>{{ event.priority }}</td>
+          <td>
+            <button mat-icon-button color="warn" (click)="doDelete(event)">
+              <mat-icon>delete</mat-icon>
+            </button>
+            <button mat-icon-button color="accent" (click)="doUpdate(event)">
+              <mat-icon>update</mat-icon>
+            </button>
+          </td>
+        </tr>
+      </ng-container>
+    </table>
+  </ng-container>
 </ng-container>
+
+<!-- Add link -->
+<a [routerLink]="['/', 'event-add']">Ajouter un événement</a>
 
 <ng-template #noEvent>
   Désolé, aucun événement de ce type
+</ng-template>
+
+<ng-template #loader>
+  <mat-spinner></mat-spinner>
 </ng-template>
