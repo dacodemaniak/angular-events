@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { EventModule } from './event/event.module';
 
 import { UserInterfaceModule } from './shared/user-interface/user-interface.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { UserInterfaceModule } from './shared/user-interface/user-interface.modu
     BrowserModule,
     AppRoutingModule,
     UserInterfaceModule,
-    EventModule
+    EventModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
