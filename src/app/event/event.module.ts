@@ -4,6 +4,10 @@ import { EventListComponent } from './components/event-list/event-list.component
 import { FilterBarComponent } from './components/filter-bar/filter-bar.component';
 import { DueDatePipe } from './pipes/due-date.pipe';
 import { RowDirective } from './directives/row.directive';
+import { UserInterfaceModule } from '../shared/user-interface/user-interface.module';
+import { AddEventComponent } from './components/add-event/add-event.component';
+import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -12,10 +16,14 @@ import { RowDirective } from './directives/row.directive';
     EventListComponent,
     FilterBarComponent,
     DueDatePipe,
-    RowDirective
+    RowDirective,
+    AddEventComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    UserInterfaceModule,
+    RouterModule,
+    ReactiveFormsModule
   ]
 })
 export class EventModule { }
