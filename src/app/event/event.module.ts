@@ -8,6 +8,7 @@ import { UserInterfaceModule } from '../shared/user-interface/user-interface.mod
 import { AddEventComponent } from './components/add-event/add-event.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UpdEventComponent } from './components/upd-event/upd-event.component';
 
 
 
@@ -17,7 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FilterBarComponent,
     DueDatePipe,
     RowDirective,
-    AddEventComponent
+    AddEventComponent,
+    UpdEventComponent
   ],
   imports: [
     CommonModule,

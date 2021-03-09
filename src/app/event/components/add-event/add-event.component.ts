@@ -54,7 +54,7 @@ export class AddEventComponent implements OnInit {
       {
         value: 3
       }
-    )
+    );
     this.eventForm = this.formBuilder.group({
       title: [
         '',
