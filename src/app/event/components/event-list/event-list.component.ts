@@ -17,17 +17,17 @@ export class EventListComponent implements OnInit, OnDestroy {
     this.events.push(
       {
         title: 'Découvrir le framework Angular',
-        beginAt: new Date(),
+        beginAt: new Date('2021-03-08'),
         priority: 3
       },
       {
         title: 'Directive de structure ngFor',
-        beginAt: new Date(),
+        beginAt: new Date('2021-03-09'),
         priority: 3
       },
       {
         title: 'Directive de structure ngIf',
-        beginAt: new Date(),
+        beginAt: new Date('2021-03-15'),
         priority: 1
       },
     );

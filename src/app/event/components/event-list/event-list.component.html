@@ -11,6 +11,9 @@
           Date
         </th>
         <th>
+          Echéance
+        </th>
+        <th>
           Priorité
         </th>
         <th>Action</th>
@@ -20,6 +23,7 @@
       <tr *ngIf="filterActive === 0 || event.priority === filterActive">
         <td>{{ event.title | uppercase }}</td>
         <td>{{ event.beginAt | date: 'dd-MM-YYYY' }}</td>
+        <td>{{ event.beginAt | evDueDate: {diffAs: 'day'} }}</td>
         <td>{{ event.priority }}</td>
         <td>&nbsp;</td>
       </tr>
