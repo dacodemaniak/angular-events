@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { EventListComponent } from './components/event-list/event-list.component';
 import { FilterBarComponent } from './components/filter-bar/filter-bar.component';
 import { DueDatePipe } from './pipes/due-date.pipe';
+import { RowDirective } from './directives/row.directive';
 
 
 
@@ -10,7 +11,8 @@ import { DueDatePipe } from './pipes/due-date.pipe';
   declarations: [
     EventListComponent,
     FilterBarComponent,
-    DueDatePipe
+    DueDatePipe,
+    RowDirective
   ],
   imports: [
     CommonModule

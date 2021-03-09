@@ -20,7 +20,7 @@
       </tr>
     </thead>
     <ng-container *ngFor="let event of events">
-      <tr *ngIf="filterActive === 0 || event.priority === filterActive">
+      <tr evRow="#f8f8f8" *ngIf="filterActive === 0 || event.priority === filterActive">
         <td>{{ event.title | uppercase }}</td>
         <td>{{ event.beginAt | date: 'dd-MM-YYYY' }}</td>
         <td>{{ event.beginAt | evDueDate: {diffAs: 'day'} }}</td>
