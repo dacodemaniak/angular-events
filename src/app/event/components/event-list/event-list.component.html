@@ -25,7 +25,11 @@
         <td>{{ event.beginAt | date: 'dd-MM-YYYY' }}</td>
         <td>{{ event.beginAt | evDueDate: {diffAs: 'day'} }}</td>
         <td>{{ event.priority }}</td>
-        <td>&nbsp;</td>
+        <td>
+          <button mat-icon-button color="warn" (click)="doDelete(event)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
       </tr>
     </ng-container>
   </table>
