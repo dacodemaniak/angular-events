@@ -73,7 +73,6 @@ export class UpdEventComponent implements OnInit {
 
   public upd(): void {
     this.event = this.event.deserialize(this.eventForm.value);
-    console.log(`After update : ${JSON.stringify(this.event)}`);
     this.eventService.update(this.event);
     this.router.navigate(['/', 'events']);
   }
