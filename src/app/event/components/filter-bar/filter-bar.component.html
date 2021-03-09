@@ -1,9 +1,9 @@
 <div class="header">
   Affiche : {{ countFiltered() }} / {{ events.length }} événements
 </div>
-<div class="filterBar">
-  <button [ngClass]="{'active': activeFilter === 0}" type="button" (click)="filter(0)">Tous</button>
-  <button [ngClass]="{'active': activeFilter === 1}"type="button" (click)="filter(1)">Priorité 1</button>
-  <button [ngClass]="{'active': activeFilter === 2}" type="button" (click)="filter(2)">Priorité 2</button>
-  <button [ngClass]="{'active': activeFilter === 3}" type="button" (click)="filter(3)">Priorité 3</button>
-</div>
+<mat-button-toggle-group>
+  <mat-button-toggle [ngClass]="{'active': activeFilter === 0}" type="button" (click)="filter(0)">Tous</mat-button-toggle>
+  <mat-button-toggle [ngClass]="{'active': activeFilter === 1}"type="button" (click)="filter(1)">Priorité 1</mat-button-toggle>
+  <mat-button-toggle [ngClass]="{'active': activeFilter === 2}" type="button" (click)="filter(2)">Priorité 2</mat-button-toggle>
+  <mat-button-toggle [ngClass]="{'active': activeFilter === 3}" type="button" (click)="filter(3)">Priorité 3</mat-button-toggle>
+</mat-button-toggle-group>
