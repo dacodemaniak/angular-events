@@ -1,3 +1,4 @@
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { EventModel } from 'src/app/shared/models/event-model';
 
@@ -7,7 +8,9 @@ import { EventModel } from 'src/app/shared/models/event-model';
 export class EventService {
   private events: EventModel[];
 
-  constructor() {
+  constructor(
+    private httpClient: HttpClient
+  ) {
     this.events = [];
   }
 
@@ -32,6 +35,7 @@ export class EventService {
     event.id = id;
     this.events.push(event);
     localStorage.setItem('events', JSON.stringify(this.events));
+
   }
 
   public update(event: EventModel): void {

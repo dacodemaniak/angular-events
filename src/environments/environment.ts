@@ -5,7 +5,8 @@ import { version } from './../../package.json';
 
 export const environment = {
   production: false,
-  version
+  version,
+  clockApi: "http://worldclockapi.com/api/json/utc/now"
 };
 
 /*

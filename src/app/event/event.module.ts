@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { EventManageComponent } from './components/event-manage/event-manage.component';
 import { EventFormComponent } from './components/event-form/event-form.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -28,6 +29,7 @@ import { TranslateModule } from '@ngx-translate/core';
     RouterModule,
     ReactiveFormsModule,
     TranslateModule,
+    HttpClientModule,
   ]
 })
 export class EventModule { }

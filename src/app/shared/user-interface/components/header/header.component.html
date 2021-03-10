@@ -3,6 +3,9 @@
     <h1>Event Manager</h1>
     <span class="example-spacer"></span>
 
+    {{ currentDateTime | async }}
+
+    <span class="example-spacer"></span>
     <mat-form-field>
       <label for="language">{{ 'header.language.select' | translate }}</label>
       <mat-select id="language" size="1" (selectionChange)="changeLocalization()">
