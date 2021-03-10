@@ -3,5 +3,8 @@
     <li>Conditions Générales d'Utilisations</li>
     <li>&copy; Copyright Aélion 2021</li>
     <li>Version : ???.???.???</li>
+    <ng-container *ngIf="(user | async) as account">
+      <li>{{ account.username }}</li>
+    </ng-container>
   </ul>
 </footer>
