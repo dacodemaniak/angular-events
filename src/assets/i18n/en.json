@@ -1,0 +1,11 @@
+{
+  "appTitle": "Events",
+  "event": {
+    "list": {
+      "title": "Title",
+      "date": "Date",
+      "dueDate": "Due date",
+      "priority": "Priority"
+    }
+  }
+}

@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EventManageComponent } from './components/event-manage/event-manage.component';
 import { EventFormComponent } from './components/event-form/event-form.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -25,7 +26,8 @@ import { EventFormComponent } from './components/event-form/event-form.component
     CommonModule,
     UserInterfaceModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslateModule,
   ]
 })
 export class EventModule { }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -11,9 +12,10 @@ export class AppComponent {
 
 
   public constructor(
-    private titleService: Title
+    private titleService: Title,
+    private translateService: TranslateService
   ) {
-    this.titleService.setTitle('Liste des événements');
+    this.titleService.setTitle(this.translateService.instant('appTitle'));
   }
 
 }
