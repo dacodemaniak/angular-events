@@ -37,7 +37,7 @@ export class EventListComponent implements OnInit, OnDestroy {
   }
 
   public doUpdate(event: EventModel): void {
-    this.router.navigate(['/', 'event-upd', event.id]);
+    this.router.navigate(['/', 'event', event.id]);
   }
 
   public filter(priority: number): void {

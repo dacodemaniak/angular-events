@@ -1,0 +1,36 @@
+<form [formGroup]="eventForm" (ngSubmit)="save()">
+  <div class="form-group">
+    <mat-form-field>
+      <mat-label for="title">Titre</mat-label>
+      <input matInput type="text" formControlName="title" id="title">
+      <mat-error *ngIf="c.title.touched && c.title.errors">
+        Le titre est obligatoire !
+      </mat-error>
+    </mat-form-field>
+
+  </div>
+  <div class="form-group">
+    <mat-form-field>
+      <mat-label for="detail">Description</mat-label>
+      <input matInput formControlName="detail" id="detail">
+    </mat-form-field>
+
+  </div>
+  <div class="form-group">
+    <mat-form-field>
+      <label for="priority">Priorité</label>
+      <mat-select formControlName="priority" id="priority" size="0">
+        <mat-option *ngFor="let entry of priorities | keyvalue" [value]="entry.value.value">{{ entry.key }}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="c.priority.touched && c.priority.errors">
+        Vous devez sélectionner une priorité
+      </mat-error>
+    </mat-form-field>
+
+  </div>
+  <div class="form-group">
+    <button mat-button color="primary" [disabled]="eventForm.invalid">
+      Ajouter
+    </button>
+  </div>
+</form>

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddEventComponent } from './event/components/add-event/add-event.component';
 import { EventListComponent } from './event/components/event-list/event-list.component';
+import { EventManageComponent } from './event/components/event-manage/event-manage.component';
 import { UpdEventComponent } from './event/components/upd-event/upd-event.component';
 
 const routes: Routes = [
@@ -21,6 +22,14 @@ const routes: Routes = [
   {
     path: 'event-upd/:id',
     component: UpdEventComponent
+  },
+  {
+    path: 'event',
+    component: EventManageComponent
+  },
+  {
+    path: 'event/:id',
+    component: EventManageComponent
   },
   {
     path: '**',
