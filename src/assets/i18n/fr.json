@@ -7,5 +7,10 @@
       "dueDate": "Echéance",
       "priority": "Priorité"
     }
+  },
+  "header": {
+    "language": {
+      "select": "Langue"
+    }
   }
 }

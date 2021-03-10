@@ -13,6 +13,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { TranslateModule } from '@ngx-translate/core';
 
 const materials: any[] = [
   MatToolbarModule,
@@ -23,7 +24,8 @@ const materials: any[] = [
   MatSelectModule,
   MatSnackBarModule,
   MatIconModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  TranslateModule
 ];
 
 @NgModule({

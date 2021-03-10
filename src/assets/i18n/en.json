@@ -7,5 +7,10 @@
       "dueDate": "Due date",
       "priority": "Priority"
     }
+  },
+  "header": {
+    "language": {
+      "select": "Language"
+    }
   }
 }
