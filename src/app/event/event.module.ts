@@ -9,6 +9,8 @@ import { AddEventComponent } from './components/add-event/add-event.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UpdEventComponent } from './components/upd-event/upd-event.component';
+import { EventManageComponent } from './components/event-manage/event-manage.component';
+import { EventFormComponent } from './components/event-form/event-form.component';
 
 
 
@@ -19,7 +21,9 @@ import { UpdEventComponent } from './components/upd-event/upd-event.component';
     DueDatePipe,
     RowDirective,
     AddEventComponent,
-    UpdEventComponent
+    UpdEventComponent,
+    EventManageComponent,
+    EventFormComponent
   ],
   imports: [
     CommonModule,
