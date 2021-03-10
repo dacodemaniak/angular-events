@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { UserService } from 'src/app/core/services/user.service';
+import { environment } from './../../../../../environments/environment';
 
 @Component({
   selector: 'app-footer',
@@ -10,6 +11,7 @@ import { UserService } from 'src/app/core/services/user.service';
 export class FooterComponent implements OnInit {
 
   public user: BehaviorSubject<any>;
+  public version: string;
 
   constructor(
     private userService: UserService
@@ -17,6 +19,7 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.userService.user;
+    this.version = `${environment.version}`;
   }
 
 }
