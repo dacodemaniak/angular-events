@@ -1,3 +1,5 @@
-<p>event-manage works!</p>
-
-<app-event-form [eventForm]="eventForm"></app-event-form>
+<app-event-form
+  [eventForm]="eventForm"
+  (eventData)="save($event)"
+  [handleMode]="handleMode"
+></app-event-form>

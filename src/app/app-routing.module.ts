@@ -4,6 +4,7 @@ import { AddEventComponent } from './event/components/add-event/add-event.compon
 import { EventListComponent } from './event/components/event-list/event-list.component';
 import { EventManageComponent } from './event/components/event-manage/event-manage.component';
 import { UpdEventComponent } from './event/components/upd-event/upd-event.component';
+import { EventResolver } from './event/resolvers/event.resolver';
 
 const routes: Routes = [
   {
@@ -25,11 +26,17 @@ const routes: Routes = [
   },
   {
     path: 'event',
-    component: EventManageComponent
+    component: EventManageComponent,
+    resolve: {
+      event: EventResolver
+    }
   },
   {
     path: 'event/:id',
-    component: EventManageComponent
+    component: EventManageComponent,
+    resolve: {
+      event: EventResolver
+    }
   },
   {
     path: '**',

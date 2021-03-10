@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 @Component({
@@ -8,6 +8,8 @@ import { FormGroup } from '@angular/forms';
 })
 export class EventFormComponent implements OnInit {
   @Input() public eventForm: FormGroup;
+  @Input() public handleMode: string;
+  @Output() public eventData: EventEmitter<any> = new EventEmitter();
 
   public priorities: Map<string, any> = new Map();
 
@@ -36,6 +38,8 @@ export class EventFormComponent implements OnInit {
       }
     );
   }
-  public save(): void {}
+  public save(): void {
+    this.eventData.emit(this.eventForm.value);
+  }
 
 }
